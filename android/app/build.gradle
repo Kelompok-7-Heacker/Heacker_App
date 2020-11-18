@@ -25,6 +25,11 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
 android {
     compileSdkVersion 28
 
@@ -36,22 +41,58 @@ android {
         disable 'InvalidPackage'
     }
 
+    // defaultConfig {
+    //     // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+    //     applicationId "com.example.heacker_app"
+    //     minSdkVersion 21
+    //     targetSdkVersion 28
+    //     versionCode flutterVersionCode.toInteger()
+    //     versionName flutterVersionName
+    // }
+
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.heacker_app"
-        minSdkVersion 16
+        applicationId "com.example.heacker_app" //nama package
+        minSdkVersion 21
         targetSdkVersion 28
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
+        versionCode 1 //version code
+        versionName "1.0" //version code
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    
+    // signingConfigs {
+    //     release {
+    //         keyAlias keystoreProperties['keyAlias']
+    //         keyPassword keystoreProperties['keyPassword']
+    //         storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+    //         storePassword keystoreProperties['storePassword']
+    //     }
+    // }
+
+    signingConfigs {
+    release {
+        //if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
+            storeFile file("keystore.jks")
+            storePassword "123456"
+            keyAlias "key"
+            keyPassword "123456"
+       // }
+    }
+}
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            // other settings
+            signingConfig signingConfigs.release
         }
     }
+
+    // buildTypes {
+    //     release {
+    //         // TODO: Add your own signing config for the release build.
+    //         // Signing with the debug keys for now, so `flutter run --release` works.
+    //         signingConfig signingConfigs.debug
+    //     }
+    // }
 }
 
 flutter {
