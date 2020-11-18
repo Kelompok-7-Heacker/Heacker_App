@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './About.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -42,7 +43,12 @@ class Ear extends StatelessWidget {
                 ),
               ),
               new ListTile(
-                  title: new Text("About Us"), leading: Icon(Icons.info))
+                  title: new Text("About Us"),
+                  leading: Icon(Icons.info),
+                  onTap: () {
+                    Navigator.of(context).push(new MaterialPageRoute(
+                        builder: (BuildContext context) => new About()));
+                  }),
             ],
           ),
         ),
