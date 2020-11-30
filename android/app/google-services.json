@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "205572349240",
+    "firebase_url": "https://heacker-93f56.firebaseio.com",
+    "project_id": "heacker-93f56",
+    "storage_bucket": "heacker-93f56.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205572349240:android:2a594f77d3f55038a0f5cd",
+        "android_client_info": {
+          "package_name": "com.example.heacker_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205572349240-ad85hou86fpp8vbc7ng95oi6pi2hhlpl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVynnWAj812uBkNBXtEpqET3LqV_ScQXQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "205572349240-ad85hou86fpp8vbc7ng95oi6pi2hhlpl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
