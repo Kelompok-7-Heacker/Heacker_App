@@ -6,6 +6,9 @@ import 'package:wakelock/wakelock.dart';
 import 'chart.dart';
 import './About.dart';
 
+import 'package:heacker_app/authentication/login_view.dart';
+import 'package:heacker_app/authentication/Auth.dart';
+
 class Heart extends StatefulWidget {
   @override
   HomePageView createState() {
@@ -91,6 +94,17 @@ class HomePageView extends State<Heart> with SingleTickerProviderStateMixin {
                 onTap: () {
                   Navigator.of(context).push(new MaterialPageRoute(
                       builder: (BuildContext context) => new About()));
+                }),
+            new ListTile(
+                title: new Text("Logout"),
+                leading: Icon(Icons.exit_to_app),
+                onTap: () async {
+                  await Auth.signOut().then((value) => {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()))
+                      });
                 }),
           ],
         ),
