@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import './About.dart';
+import 'package:heacker_app/authentication/login_view.dart';
+import 'package:heacker_app/authentication/Auth.dart';
 
 void main() {
   runApp(new MaterialApp(
-    title: "Home",
-    home: new Home(),
+    title: "Ear Checker",
+    home: new Ear(),
   ));
 }
 
-class Home extends StatelessWidget {
+class Ear extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: new Text("Home Page"),
+          title: new Text("Ear Checker Page"),
         ),
         drawer: new Drawer(
           child: new ListView(
@@ -49,13 +51,24 @@ class Home extends StatelessWidget {
                     Navigator.of(context).push(new MaterialPageRoute(
                         builder: (BuildContext context) => new About()));
                   }),
+              new ListTile(
+                  title: new Text("Logout"),
+                  leading: Icon(Icons.exit_to_app),
+                  onTap: () async {
+                    await Auth.signOut().then((value) => {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginPage()))
+                        });
+                  }),
             ],
           ),
         ),
         body: new Container(
             padding: EdgeInsets.all(20.0),
             child: new Center(
-              child: new Text("Home Page"),
+              child: new Text("Ear Checker Page"),
             )));
   }
 }
