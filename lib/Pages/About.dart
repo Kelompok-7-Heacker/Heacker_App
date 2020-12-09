@@ -80,7 +80,7 @@ class About extends StatelessWidget {
     final lorem3 = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-        'Reynali - 000000',
+        'Reynali - 00000025047',
         style: TextStyle(fontSize: 16.0),
       ),
     );
@@ -88,7 +88,7 @@ class About extends StatelessWidget {
     final lorem4 = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-        'Samuel Antonie - 000000',
+        'Samuel Antonie - 00000025003',
         style: TextStyle(fontSize: 16.0),
       ),
     );
@@ -96,7 +96,7 @@ class About extends StatelessWidget {
     final lorem5 = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-        'Adjie Kristiawan - 000000',
+        'Adjie Kristiawan - 00000022161',
         style: TextStyle(fontSize: 16.0),
       ),
     );
@@ -104,12 +104,6 @@ class About extends StatelessWidget {
     final body = Container(
       width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.all(28.0),
-      // decoration: BoxDecoration(
-      //   gradient: LinearGradient(colors: [
-      //     Colors.blue,
-      //     Colors.lightBlueAccent,
-      //   ]),
-      // ),
       child: Column(
         children: <Widget>[
           alucard,
