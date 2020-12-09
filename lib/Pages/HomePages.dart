@@ -4,7 +4,6 @@ import './About.dart';
 import 'package:heacker_app/authentication/login_view.dart';
 import 'package:heacker_app/authentication/Auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() => runApp(MaterialApp(
@@ -207,7 +206,7 @@ class HomePages extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Image.asset(
-                          "assets/images/Logo.png",
+                          "assets/Logo.png",
                           height: 250.0,
                           width: 250.0,
                         ),

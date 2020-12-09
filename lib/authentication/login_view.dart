@@ -167,7 +167,7 @@ class _Login extends State<LoginPage> {
                       else
                         {
                           Fluttertoast.showToast(
-                              msg: "Wrong Email or Password",
+                              msg: "Wrong Email or Password {$user}",
                               toastLength: Toast.LENGTH_SHORT,
                               gravity: ToastGravity.CENTER,
                               timeInSecForIosWeb: 1,

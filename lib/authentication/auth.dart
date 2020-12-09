@@ -39,24 +39,6 @@ class Auth {
     }
   }
 
-  // static Future<User> signUp(
-  //     String name, String email, String password, String gender) async {
-  //   try {
-  //     UserCredential result = await _auth.createUserWithEmailAndPassword(
-  //         email: email, password: password);
-  //     User user = result.user;
-  //     // await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
-  //     //   "name": name,
-  //     //   "gender": gender,
-  //     //   "status": "Pasien",
-  //     // });
-  //     return user;
-  //   } catch (e) {
-  //     print(e.toString());
-  //     return null;
-  //   }
-  // }
-
   static Future<void> signOut() async {
     _auth.signOut();
   }
